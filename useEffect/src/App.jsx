@@ -1,34 +1,56 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [count,setCount] = useState(0)
+  const [name,setName] = useState("Adı değiştir")
+  const [lastname,setLastname] = useState("Soyadı değiştir")
+  useEffect(()=>{
+    console.log("HEr zaman çalışır")
+
+  })
+  useEffect(()=>{  //database bağlantısı yapıldığında kullanılır.
+    console.log("Yalnızca bir kere çalışır")
+  },[])
+
+  useEffect(()=>{
+    console.log("İlk render edildiğinde ve count değiştiğinde çalışır")
+  },[count])
+
+  useEffect(()=>{
+    console.log("İlk render edildiğinde ve name-lastname değiştiğinde çalışır ")
+  },[name,lastname])
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>{count}</h1>
+        <button onClick={()=>setCount(count+1)}>+</button>
+        <button onClick={()=>setCount(count-1)}>-</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div>
+        <h1>{name} {lastname} </h1>
+        
+        <button onClick={()=>setName("Kadir")}>Değiştir</button>
+        <button onClick={()=>setLastname("Paşaoğlu")}>Değiştir</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div>
+      
+        <button onClick=
+        {()=>{
+          setCount(0)
+          setName("Adı Değiştir")
+          setLastname("Soyadı Değiştir")
+        }}
+          >Reset</button>
+       
+      </div>
     </>
+    
   )
 }
 
