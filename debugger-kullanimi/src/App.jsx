@@ -10,31 +10,38 @@ function App() {
   const [final,setFinal] = useState(0)
   const [ortalama,setOrtalama] = useState(0)
   const [durum,setDurum] = useState("")
-  function ortalamaHesapla(){
-    setOrtalama((vize*0.4)+(final*0.6))
-    if(ortalama>=50){
-      setDurum("Geçti")
-    }else{
-      setDurum("Kaldı")
-    }
+ 
+  const ortalamaHesapla= ()=>{
+    debugger;
+    const  ort= topla() /2;
+    setOrtalama(ort)
+    yazdır(ort)
   }
+  const topla=()=>{
+    debugger;
+    const toplam= vize + final;
+    return toplam;
+  }
+  const yazdır =(cevap)=>{
+    console.log("Ortalama: " + cevap)
+  }
+  
 
   return (
     <>
       <div>
         <div>
-          <input type="number" value={vize} onChange={(e)=>setVize(e.target.value)} />
+          <input type="number" value={vize} onChange={(e) => setVize(Number(e.target.value))} />
         </div>
         <div>
-          <input type="number" value={final} onChange={(e)=>setFinal(e.target.value)} />
+          <input type="number" value={final} onChange={(e) => setFinal(Number(e.target.value))} />
         </div>
         <div>
           <button onClick={ortalamaHesapla}>Ortalama Hesapla</button>
-          <h1>{ortalama}</h1> 
-          <h1>{durum}</h1>
+          
         </div>
         <div>
-          
+            Ortalama :{ortalama}
         </div>
       </div>
       
