@@ -1,31 +1,46 @@
 import React, { useState } from "react";
 
 const AsalCarpan = () => {
-    const [sayi, setSayi] = useState();
-    const [asal, setAsal] = useState(2);
-    const [temp, setTemp] = useState();
+    const [sayi, setSayi] = useState('');
+    const [sonuc, setSonuc] = useState([]);
 
-    const asalcarpan1 = () => {
-        while (asal <= sayi) {
-            if (sayi % asal === 0) {
-                setTemp(asal);
-                sayi = sayi / asal;
+    const asalCarpanlariBul = () => {
+        let num = parseInt(sayi);
+        let carpanlar = new Set();
+        let bolum = 2;
+
+        while (num > 1) {
+            if (num % bolum === 0) {
+                carpanlar.add(bolum);
+                num = num / bolum;
             } else {
-                asal = asal + 1;
+                bolum++;
             }
         }
-        return temp;
+
+        setSonuc(Array.from(carpanlar).sort((a, b) => a - b));
     }
 
     return (
         <div>
-            <h1> Asal çarpan bulma </h1>
-            <input type="number" placeholder="Sayı giriniz" onChange={(e) => setSayi(e.target.value)} />
+            <h1>Asal Çarpan Bulma</h1>
+            <input 
+                type="number" 
+                value={sayi} 
+                onChange={(e) => setSayi(e.target.value)}
+                placeholder="Bir sayı giriniz"
+            />
             <div>
-                <button onClick={asalcarpan1}>Hesapla</button>
+                <button onClick={asalCarpanlariBul}>Hesapla</button>
             </div>
+            {sonuc.length > 0 && (
+                <div>
+                    <h3>Asal Çarpanlar:</h3>
+                    <p>{sayi} = {sonuc.join(' - ')}</p>
+                </div>
+            )}
         </div>
-    )
+    );
 }
 
 export default AsalCarpan;
