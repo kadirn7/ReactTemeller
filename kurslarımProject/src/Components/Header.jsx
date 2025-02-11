@@ -7,7 +7,8 @@ function Header(){
     return(
 
         <div className='header'>
-                Kurslarım
+                <div className="title"> PROJELERİM</div>
+
 
         </div>
 

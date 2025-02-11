@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Header from './Components/Header';
-import AsalCarpan from './algorith/asalcarpan';
+
 
 function App() {
   
@@ -9,7 +9,7 @@ function App() {
     <>
       <div>
         <Header/>
-        <AsalCarpan />
+        
       </div>
       
     </>
