@@ -1,0 +1,31 @@
+{
+ "project":[
+
+    {
+        "id":1,
+        "title":"Kişisel Portföy Websitesi",
+        "description":"Modern ve profesyonel bir portföy websitesi. Vue.js 3 ve Tailwind CSS kullanılarak geliştirildi. Responsive tasarım, dark/light tema desteği, dinamik içerik yönetimi ve modern UI/UX özellikleri içermektedir. Clean code prensiplerine uygun olarak geliştirilmiş olup, projelerimi ve yeteneklerimi sergilemek için tasarlandı.",
+        "image":"projeler/Project1.MyPortfoy.png"
+
+
+    },
+    {
+        "id":2,
+        "title":"Vue.js Multi-Project Portfolio",
+        "description":"Modern ve responsive bir portföy projesi. Vue.js 3, Vite ve Tailwind CSS kullanılarak geliştirildi. Proje içerisinde 2048, Tic Tac Toe, Todo List, Pomodoro Timer, Calculator, Weather App ve Gallery gibi alt projeler bulunmaktadır. Tüm projeler tek bir repository altında toplanmış olup, clean code prensiplerine uygun olarak geliştirilmiştir.",
+        "image":"projeler/Project2.VueProjelerim.png"
+
+    }
+    
+    ],
+    "Kişi": [
+        {
+            "ad": "John Doe",
+            "ünvan": "Developer"
+        },
+        {
+            "ad": "Jane Smith",
+            "ünvan": "Designer"
+        }
+    ]
+}
