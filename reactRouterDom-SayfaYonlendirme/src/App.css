@@ -1,0 +1,23 @@
+.body{
+  margin: 0;
+  padding: 0;
+  
+  background-color: #f0f0f0;
+}
+.header{
+  background-color: lightblue;
+  color: #fff;
+  padding: 10px 0;
+  flex-direction:row;
+  align-items: center;
+}
+
+
+.link{
+  
+  text-decoration: none;
+  font-family:arial;
+  font-weight:300;
+  margin:0 6px;
+}
+
